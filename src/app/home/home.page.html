@@ -1,0 +1,52 @@
+<ion-content [fullscreen]="true">
+  <!-- Form -->
+  <h1>Direct Task</h1>
+  <p>Silahkan masukkan biodata anda!</p>
+  <form (ngSubmit)="sendMessage()">
+    <!-- Name -->
+    <ion-item>
+      <ion-label>Nama:</ion-label>
+      <ion-input type="text" [(ngModel)]="name" name="name" placeholder="Masukkan Nama anda"></ion-input>
+    </ion-item>
+
+    <!-- Kelas -->
+    <ion-item>
+      <ion-label>Kelas:</ion-label>
+      <ion-input type="text" [(ngModel)]="kelas" name="kelas" placeholder="Masukkan Kelas anda"></ion-input>
+    </ion-item>
+
+    <!-- Message -->
+    <ion-item>
+      <ion-label>Message:</ion-label>
+      <ion-textarea [(ngModel)]="message" name="message" placeholder="Masukkan Pesan anda"></ion-textarea>
+    </ion-item>
+
+    <!-- Send To -->
+    <ion-row>
+      <ion-col>
+        <ion-button expand="full" [color]="sendTo === 'whatsapp' ? 'primary' : 'medium'" (click)="sendTo = 'whatsapp'">
+          WhatsApp
+        </ion-button>
+      </ion-col>
+
+      <ion-col>
+        <ion-button expand="full" [color]="sendTo === 'telegram' ? 'primary' : 'medium'" (click)="sendTo = 'telegram'">
+          Telegram
+        </ion-button>
+      </ion-col>
+
+      <ion-col>
+        <ion-button expand="full" [color]="sendTo === 'telegram' ? 'primary' : 'medium'" (click)="sendTo = 'telegram'">
+          Email
+        </ion-button>
+      </ion-col>
+
+    </ion-row>
+
+    <!-- Submit Button -->
+    <ion-button expand="full" type="submit">Kirim</ion-button>
+  </form>
+
+  <!-- Riwayat Button -->
+  <ion-button expand="full" routerLink="/history">Riwayat</ion-button>
+</ion-content>
